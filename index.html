@@ -9,54 +9,44 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(120deg, #ffdde1, #ff9a9e);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             margin: 0;
-            overflow: hidden;
-            position: relative;
+            overflow-x: hidden;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
         .wrapper {
             display: flex;
+            flex-direction: column;
             width: 90%;
             max-width: 1000px;
-            height: auto;
-            min-height: 80vh;
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            justify-content: space-between;
             padding: 20px;
-            flex-wrap: wrap;
-            position: relative;
+            gap: 20px;
         }
-        .container {
-            flex: 1;
-            min-width: 400px;
-            max-width: 480px;
+        .container, .content-area {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
             text-align: center;
-        }
-        .card {
+            padding: 20px;
             background: rgba(255, 255, 255, 0.9);
-            padding: 40px;
             border-radius: 15px;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-            animation: fadeIn 1.5s ease-in-out;
             width: 100%;
             max-width: 480px;
         }
         h1 {
             font-family: 'Dancing Script', cursive;
             color: #d63384;
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -117,25 +107,20 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes sparkle {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(2); }
-        }
         .credit {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
+            margin-top: 20px;
             font-size: 16px;
             font-weight: bold;
             text-transform: uppercase;
             color: rgba(128, 128, 128, 0.7);
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            align-items: center;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
         .sparkle {
             position: absolute;
